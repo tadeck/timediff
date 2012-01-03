@@ -34,34 +34,34 @@
                 'timestamp_calc': function (diff) {
                     diff = abs(diff); // we do not care, if it is in the past
                     var result = [],
-                        tmp_diff = floor(diff/31536000); // 365 days
-                    if (tmp_diff){
-                        result.push(tmp_diff + ' year' + (tmp_diff!=1 ? 's' : ''));
+                        tmp_diff = floor(diff / 31536000); // 365 days
+                    if (tmp_diff) {
+                        result.push(tmp_diff + ' year' + (tmp_diff !== 1 ? 's' : ''));
                         diff -= tmp_diff * 31536000;
                     }
-                    tmp_diff = floor(diff/2592000); // 30 days
-                    if (tmp_diff){
-                        result.push(tmp_diff + ' month' + (tmp_diff!=1 ? 's' : ''));
+                    tmp_diff = floor(diff / 2592000); // 30 days
+                    if (tmp_diff) {
+                        result.push(tmp_diff + ' month' + (tmp_diff !== 1 ? 's' : ''));
                         diff -= tmp_diff * 2592000;
                     }
-                    tmp_diff = floor(diff/86400);
-                    if (tmp_diff){
-                        result.push(tmp_diff + ' day' + (tmp_diff!=1 ? 's' : ''));
+                    tmp_diff = floor(diff / 86400);
+                    if (tmp_diff) {
+                        result.push(tmp_diff + ' day' + (tmp_diff !== 1 ? 's' : ''));
                         diff -= tmp_diff * 86400;
                     }
-                    tmp_diff = floor(diff/3600);
-                    if (tmp_diff){
-                        result.push(tmp_diff + ' hour' + (tmp_diff!=1 ? 's' : ''));
+                    tmp_diff = floor(diff / 3600);
+                    if (tmp_diff) {
+                        result.push(tmp_diff + ' hour' + (tmp_diff !== 1 ? 's' : ''));
                         diff -= tmp_diff * 3600;
                     }
-                    tmp_diff = floor(diff/60);
-                    if (tmp_diff){
-                        result.push(tmp_diff + ' minute' + (tmp_diff!=1 ? 's' : ''));
+                    tmp_diff = floor(diff / 60);
+                    if (tmp_diff) {
+                        result.push(tmp_diff + ' minute' + (tmp_diff !== 1 ? 's' : ''));
                         diff -= tmp_diff * 60;
                     }
-                    if (diff){
+                    if (diff) {
                         // seconds left
-                        result.push(diff + ' second' + (diff!=1 ? 's' : ''));
+                        result.push(diff + ' second' + (diff !== 1 ? 's' : ''));
                     }
                     return result.join(' ');
                 }
