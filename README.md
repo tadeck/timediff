@@ -2,6 +2,8 @@ timediff plugin version 0.1 for jQuery
 
 Original source: https://github.com/tadeck/timediff
 
+Demonstration is available [here](http://jsfiddle.net/8XvTA/1/embedded/result/).
+
 What is jQuery timediff?
 ------------------------
 
