@@ -1,6 +1,6 @@
-======================================
-timediff plugin version 0.1 for jQuery
-======================================
+========================================
+timediff plugin version 0.1.1 for jQuery
+========================================
 
 Original source: https://github.com/tadeck/timediff
 

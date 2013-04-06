@@ -3,7 +3,7 @@
  * 
  * Author: T. Jaskowski
  * Site: https://github.com/tadeck
- * Version: 0.1
+ * Version: 0.1.1
  */
 (function ($, window) {
     'use strict';
