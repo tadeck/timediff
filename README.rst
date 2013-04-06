@@ -38,6 +38,16 @@ intervals like that::
         $(this).timediff('off'); // disable timediff for clicked <time> tag
     });
 
+Example for HTML5's ``<time>`` tag
+----------------------------------
+
+If you are using HTML5's ``<time>`` tag with ISO-8601 compliant ``datetime``
+attribute, the plugin can be applied directly on it and will replace content of
+the tag with relative timestamp based on ``datetime`` attribute. So, for
+example ``<time datetime="2013-06-01T12:00:00Z">noon UTC at June 1st,
+2013</time>`` will be displayed dynamically (at 11:50:20 UTC, June 1st, 2013,
+it will look like "*in 9 minutes 40 seconds*").
+
 How to use it?
 ==============
 
