@@ -7,6 +7,12 @@
  */
 (function ($, window) {
     'use strict';
+    /**
+     * Apply timediff plugin on specific elements (passing some options, if
+     * necessary), or disable it on specific elements (passing "off" string).
+     * @param {object|String} options object containing options, or string action
+     * @returns {jQuery}
+     */
     $.fn.timediff = function (options) {
         var data_interval_key = 'jquery-timediff-interval',
             clearInt = window.clearInterval,
