@@ -1,22 +1,25 @@
 {
-    "name": "timediff",
-    "version": "0.1.0",
-    "title": "jQuery timediff",
     "author": {
         "name": "Tomasz Jaskowski",
         "url": "http://www.jaskowski.info/"
     },
-    "licenses": [
+    "contributors": [
         {
-            "type": "GPLv2",
-            "url": "http://www.example.com/licenses/gpl.html"
+            "name": "Tomasz Jaskowski",
+            "url": "http://www.jaskowski.info/"
         }
     ],
     "dependencies": {
-        "jquery": "1"
+        "jquery": ">=1.2.3"
     },
     "description": "This plugin can be used for dynamically updated relative timestamps like: 2 seconds ago",
     "docs": "https://github.com/tadeck/timediff",
+    "files": [
+        "jquery.timediff.js",
+        "jquery.timediff.min.js",
+        "README.md"
+    ],
+    "homepage": "https://github.com/tadeck/timediff",
     "keywords": [
         "time",
         "difference",
@@ -25,16 +28,13 @@
         "timestamp",
         "timestamps"
     ],
-    "homepage": "https://github.com/tadeck/timediff",
-    "contributors": [
+    "licenses": [
         {
-            "name": "Tomasz Jaskowski",
-            "url": "http://www.jaskowski.info/"
+            "type": "GPLv2",
+            "url": "http://www.example.com/licenses/gpl.html"
         }
     ],
-    "files": [
-        "jquery.timediff.js",
-        "jquery.timediff.min.js",
-        "README.md"
-    ]
+    "name": "timediff",
+    "title": "jQuery timediff",
+    "version": "0.1.0"
 }
