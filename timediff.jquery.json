@@ -3,12 +3,14 @@
         "name": "Tomasz Jaskowski",
         "url": "http://www.jaskowski.info/"
     },
+    "bugs": "https://github.com/tadeck/timediff/issues",
     "contributors": [
         {
             "name": "Tomasz Jaskowski",
             "url": "http://www.jaskowski.info/"
         }
     ],
+    "demo": "http://jsfiddle.net/tadeck/8XvTA/3/embedded/result/",
     "dependencies": {
         "jquery": ">=1.2.3"
     },
