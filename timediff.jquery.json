@@ -16,10 +16,12 @@
         "jquery": "1"
     },
     "description": "This plugin can be used for dynamically updated relative timestamps like: 2 seconds ago",
+    "docs": "https://github.com/tadeck/timediff",
     "keywords": [
         "time",
         "difference",
         "ago",
+        "timediff",
         "timestamp",
         "timestamps"
     ],
