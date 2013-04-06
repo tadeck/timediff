@@ -91,3 +91,21 @@ The following options can provided to ``timediff`` plugin:
   should return descriptive difference like "*10 minutes 15 seconds*". The
   first parameter to it contains difference in seconds (may be negative if the
   timestamp is in the future, so make sure to take absolute value of it).
+
+Changelog
+=========
+
++---------+------------+------------------------------------------------------+
+| Version | Released   | Changes                                              |
++=========+============+======================================================+
+| 0.1.1   | 2013-04-06 | - initial release supporting jQuery Plugins index,   |
++---------+------------+------------------------------------------------------+
+
+License
+=======
+
+Default license is MIT, available at:
+https://github.com/tadeck/timediff/blob/master/LICENSE.rst
+
+If you need additional license, please add appropriate ticket in the issue
+tracking system: https://github.com/tadeck/timediff/issues
