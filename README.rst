@@ -5,7 +5,7 @@ timediff plugin version 0.1.1 for jQuery
 Original source: https://github.com/tadeck/timediff
 
 Demonstration is available `here
-<http://jsfiddle.net/tadeck/8XvTA/3/embedded/result/>`_.
+<http://jsfiddle.net/tadeck/8XvTA/4/embedded/result/>`_.
 
 What is jQuery timediff?
 ========================
