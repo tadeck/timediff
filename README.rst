@@ -87,7 +87,7 @@ The following options can provided to ``timediff`` plugin:
   seconds*").
 - ``interval`` - interval of timestamp updates in miliseconds (default is
   ``1000``),
-- ``timestamp_diff`` - function used to calculate the relative timestamp,
+- ``timestamp_calc`` - function used to calculate the relative timestamp,
   should return descriptive difference like "*10 minutes 15 seconds*". The
   first parameter to it contains difference in seconds (may be negative if the
   timestamp is in the future, so make sure to take absolute value of it).
