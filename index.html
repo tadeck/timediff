@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery timediff</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <!-- For us, IE before version 9 is dead! No shivs, no hacks, freedom for everyone! -->
+    <style type="text/css">
+      body {
+        margin: 10px;
+      }
+      #top {
+        position: absolute;
+        top: 0;
+      }
+      .tooltip-explanation {
+        border-bottom: 1px dashed #999;
+        cursor: help;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="top"></span>
+    <div class="container">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#top">jQuery timediff examples</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex8-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#chapter-1">Basic usage</a></li>
+            <li><a href="#chapter-2">Advanced usage</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <h1>jQuery timediff plugin examples</h1>
+
+      <p>This page contains examples for jQuery plugin called <a href="http://plugins.jquery.com/timediff/" title="">timediff</a>.</p>
+
+      <p>The plugin is aimed at creating simple, clean, dynamic and flexible "living" stamps: updated with every second/minute/hour, and giving
+      relative time (like "10 seconds ago").</p>
+
+      <p>Useful links:</p>
+      <ul>
+        <li>jQuery plugin page: <a href="http://plugins.jquery.com/timediff/" title="">http://plugins.jquery.com/timediff/</a></li>
+        <li>GitHub repository: <a href="https://github.com/tadeck/timediff/" title="">https://github.com/tadeck/timediff/</a></li>
+        <li>Issue tracker: <a href="https://github.com/tadeck/timediff/issues" title="">https://github.com/tadeck/timediff/issues</a></li>
+      </ul>
+
+      <div class="alert alert-info">These examples certainly do not exhaust the usages of the library. If you wish to see more, you can commit some to the main repository on GitHub.</div>
+      <div class="alert alert-warning">These examples may contain some mistakes or inaccuracies. If you spot the issues on some <span class="tooltip-explanation" data-toggle="tooltip" title="Lets agree to not call Internet Explorer before version 9 &quot;a browser&quot;">browsers</span>, please <a href="https://github.com/tadeck/timediff/issues" title="">file a ticket</a>.</div>
+
+      <h2 id="chapter-1">1. Basic usage</h2>
+
+      <p>The most simplistic example is relying on existence of HTML5's tag <code>&lt;time&gt;</code> with appropriate "<code>datetime</code>"
+      attribute storing timestamp in <span class="tooltip-explanation" data-toggle="tooltip" title="Understandable by JavaScript's Date() constructor, eg. compliant with ISO-8601 format">appropriate format</span>.</p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">HTML</h4>
+        </div>
+        <div class="panel-body">
+          <pre>
+&lt;p&gt;Third version (3.0) of Python programming language has been released &lt;time datetime="2008-12-03"&gt;on December 3rd, 2008&lt;/time&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Unix Epoch will end &lt;time datetime="2038-01-19T03:14:07Z"&gt;03:14:07 UTC on Tuesday, 19 January 2038&lt;/time&gt;, causing &lt;a href="http://en.wikipedia.org/wiki/Year_2038_problem" title="Wikipedia article"&gt;Year 2038 Problem&lt;/a&gt;.&lt;/p&gt;</pre>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">JavaScript</h4>
+        </div>
+        <div class="panel-body">
+          <pre>jQuery('time').timediff();</pre>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Result</h4>
+        </div>
+        <div class="panel-body" id="example-1-1">
+          <p>Third version (3.0) of Python programming language has been released <time datetime="2008-12-03">on December 3rd, 2008</time>.</p>
+          <p>The Unix Epoch will end <time datetime="2038-01-19T03:14:07Z">03:14:07 UTC on Tuesday, 19 January 2038</time>, causing <a href="http://en.wikipedia.org/wiki/Year_2038_problem" title="Wikipedia article">Year 2038 Problem</a>.</p>
+        </div>
+      </div>
+
+
+      <h2 id="chapter-2">2. Advanced usage, aka. cookbook</h2>
+
+      <p>Some very specific needs require you to utilize some more flexible features of the plugin.
+        Below are some pretty probable cases of customization.</p>
+
+      <h3 id="chapter-2-1">2.2. Customize displaying</h3>
+
+      <p>If you want to display fuzzy times (like "more than day ago" etc.), you can alter the calculation process.
+      At the same time, you can also alter the interval, to limit the overhead if there is no need to update stamp every second.</p>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">HTML</h4>
+        </div>
+        <div class="panel-body">
+          <pre>Year 2012 ended &lt;time datetime="2013-01-01T00:00:01Z"&gt;at midnight between December 31st, 2012, and January 1st, 2013, UTC time&lt;/time&gt;.</pre>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">JavaScript</h4>
+        </div>
+        <div class="panel-body">
+          <pre>jQuery('time').timediff({
+  'interval': 60 * 60 * 1000,  // we have 1-day precision, lets update counter every hour, not every second
+  'timestamp_calc': function(diff){
+    diff = Math.abs(diff);  // does not matter, if future or past
+    if (diff > 365 * 30 * 24 * 60 * 60) {
+      // more than 1 year
+      return 'more than year';
+    } else if (diff > 30 * 24 * 60 * 60) {
+      // more than 1 month, lets count the months:
+      var months_number = Math.floor(diff / (30 * 24 * 60 * 60));
+      return months_number + ' month' + (months_number !== 1 ? 's' : '');
+    } else if (diff > 24 * 60 * 60) {
+      // more than 1 day, lets count the days:
+      var days_number = Math.floor(diff / (24 * 60 * 60));
+      return days_number + ' day' + (days_number !== 1 ? 's' : '');
+    } else {
+      // less than 1 day, but this suffices
+      return 'less than day';
+    }
+  }
+});</pre>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Result</h4>
+        </div>
+        <div class="panel-body" id="example-2-1">
+          <p>Year 2012 ended <time datetime="2013-01-01T00:00:01Z">at midnight between December 31st, 2012, and January 1st, 2013, UTC time</time>.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="text-center">
+      &copy; 2011-2013 <a href="https://github.com/tadeck/timediff/" title="">jQuery timediff</a>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="jquery.timediff.min.js"></script>
+    <script>
+      jQuery('#example-1-1').find('time').timediff();
+      jQuery('#example-2-1').find('time').timediff({
+        'interval': 60 * 60 * 1000,  // we have 1-day precision, lets update counter every hour, not every second
+        'timestamp_calc': function(diff){
+          diff = Math.abs(diff);  // it is in seconds; does not matter, if future or past
+          if (diff > 365 * 30 * 24 * 60 * 60) {
+            // more than 1 year
+            return 'more than year';
+          } else if (diff > 30 * 24 * 60 * 60) {
+            // more than 1 month, lets count the months:
+            var months_number = Math.floor(diff / (30 * 24 * 60 * 60));
+            return months_number + ' month' + (months_number !== 1 ? 's' : '');
+          } else if (diff > 24 * 60 * 60) {
+            // more than 1 day, lets count the days:
+            var days_number = Math.floor(diff / (24 * 60 * 60));
+            return days_number + ' day' + (days_number !== 1 ? 's' : '');
+          } else {
+            // less than 1 day, but this suffices
+            return 'less than day';
+          }
+        }
+      });
+      jQuery('span[data-toggle="tooltip"][title]').tooltip();
+    </script>
+  </body>
+</html>
